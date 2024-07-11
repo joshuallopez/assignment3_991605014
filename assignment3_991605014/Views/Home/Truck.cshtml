@@ -1,0 +1,32 @@
+﻿@using System.Linq
+@model assignment3_991605014.Models.Truck
+
+<h2>Add New Truck</h2>
+<form asp-action="AddTruck" method="post">
+    <div>
+        <label for="TruckNum">Truck Number:</label>
+        <input type="text" id="TruckNum" name="TruckNum" required maxlength="10" placeholder="Max 10 chars" />
+    </div>
+    <div>
+        <label for="TModel">Model:</label>
+        <input type="text" id="TModel" name="TModel" required maxlength="20" placeholder="Max 20 chars" />
+    </div>
+    <div>
+        <label for="TMake">Make:</label>
+        <input type="text" id="TMake" name="TMake" required maxlength="10" placeholder="Max 10 chars" />
+    </div>
+    <button type="submit">Add Truck</button>
+</form>
+@if (ViewBag.Trucks is List<assignment3_991605014.Models.Truck> trucks && trucks.Any())
+{
+    <ul>
+        @foreach (var truck in trucks)
+        {
+            <li>Model: @truck.TModel - Make: @truck.TMake - Truck Number: @truck.TruckNum</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No trucks have been added yet.</p>
+}

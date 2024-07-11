@@ -1,0 +1,24 @@
+﻿@model assignment3_991605014.Models.TruckWorkshop
+
+@{
+    ViewData["Title"] = "Manage Truck Workshops";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="AddTruckWorkshop">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="TruckID" class="control-label">Truck</label>
+        <select asp-for="TruckID" class="form-control" asp-items="ViewBag.TruckIDs"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="workDescription" class="control-label">Work Description</label>
+        <input asp-for="workDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="cost" class="control-label">Cost</label>
+        <input asp-for="cost" class="form-control" />
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary" />
+</form>

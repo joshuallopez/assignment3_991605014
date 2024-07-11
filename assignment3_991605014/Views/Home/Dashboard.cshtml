@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<p>Welcome, @ViewBag.UserName (@ViewBag.UserEmail)</p>
+
+<ul>
+    <li><a href="@Url.Action("Truck", "Home")">View Trucks</a></li>
+    <li><a href="@Url.Action("TransportRoute", "Home")">View Routes</a></li>
+    <li><a href="@Url.Action("TruckWorkshop", "Home")">Manage Truck Workshops</a></li>
+    <li><a href="@Url.Action("Logout", "Home")">Sign Out</a></li>
+</ul>
